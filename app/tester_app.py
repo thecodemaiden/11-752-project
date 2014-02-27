@@ -60,7 +60,7 @@ def save_input(userid):
 @app.route('/transcribe/<userid>/<num>')
 def present_file(userid, num):
 	filename = app.config['AUDIO_FILES'][int(num)]
-	return render_template('index.html', filename=filename, n=num, userid=userid)
+	return render_template('transcribe.html', filename=filename, n=num, userid=userid)
 
 
 #
