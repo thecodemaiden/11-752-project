@@ -12,7 +12,7 @@
 		</div>
 		<p>
 		<div class="transcription">
-			<form>
+			<form method='post'>
 				<input type="text" name="trans"/><br/>
 				<a href="#" class="btn btn-info">Submit</a>
 			</form>
@@ -20,6 +20,13 @@
 		</p>
 	</div>
 {% else %}
-		<h1>Test</h1>
+<center><h2>Instructions</h2></center>
+<ul>
+	<li>BLAH</li>
+	<li>BLAH</li>
+</ul>
+		<p>
+		<a href="/transcribe/1"> Click here to start transcribing. </a>
+		</p>
 {% endif %}
 {% endblock %}
