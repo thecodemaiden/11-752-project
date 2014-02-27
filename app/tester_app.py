@@ -34,12 +34,18 @@ def index():
     resultFile.write('User ' + str(userid) + '\n')
     resultFile.write('Started at timestamp: ' + str(time.time()) + '\n')
 
+
     return redirect('/splash/' + str(userid))
 
 @app.route('/splash/<userid>')
 def splash(userid):
-    # Present the front page
-    return render_template('index.html',userid=userid)
+	# Present the front page
+	# choose hard or easy
+	if (int(userid) % 2 == 0):
+		hard = False
+	else:
+		hard = True
+	return render_template('index.html',userid=userid, hard=hard)
 
 @app.route('/submit/<userid>', methods=['POST'])
 def save_input(userid):
