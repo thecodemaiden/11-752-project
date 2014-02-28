@@ -18,7 +18,10 @@ TRAIN_FILES = [f for f in os.listdir(TRAIN_FOLDER) if
 AUDIO_FILES = [f for f in os.listdir(AUDIO_FOLDER) if 
         os.path.isfile(os.path.join(AUDIO_FOLDER,f)) and
         f.endswith('.wav')]
-NEXT_ID = len(os.listdir(RESULTS_FOLDER))+1
+RESULTS_FILES = [f for f in os.listdir(RESULTS_FOLDER) if 
+        os.path.isfile(os.path.join(RESULTS_FOLDER,f)) and
+        f.endswith('.txt')]
+NEXT_ID = len(RESULTS_FILES)+1
 
 app.config['APP_ROOT'] = APP_ROOT
 app.config['TRAIN_FOLDER'] = TRAIN_FOLDER
