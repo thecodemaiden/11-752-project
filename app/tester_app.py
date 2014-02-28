@@ -72,7 +72,7 @@ def save_input(userid):
 
     # Increment utterance number and redirect
     n = int(last_n)+1
-    if n > len(app.config['AUDIO_FILES']:
+    if n > len(app.config['AUDIO_FILES']):
         return redirect('/thanks/')
     else:
         return redirect('/transcribe/'+str(userid)+'/'+str(n))
