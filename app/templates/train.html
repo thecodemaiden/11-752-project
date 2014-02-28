@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% if filename %}
+	<div>
+		<h2> Training Clip #{{ n+1 }} </h2>
+		<div class="hero-unit">
+			<audio class="audio" controls>
+			<source src="{{url_for('static',filename='training/'+filename)}}" type="audio/wav">
+			</audio><hr/>
+
+		</div>
+
+        {% if transcription %}
+            <p> <b>You said: </b> "{{ user }}" </p>
+            <p> <b>We say: </b> "{{ transcription }}" </p>
+
+            <h3><a href="/train/{{ userid }}/{{ n+1 }}">Continue...</a></h3>
+        {% else %}
+            <p>
+            <div class="transcription">
+                <p>Enter your transcription:</p>
+                <form method="post" action="/submittrain/{{ userid }}">
+                    <input type="hidden" name="n" value={{ n }} />
+                    <input type="text" name="trans" style="width:500px"/>
+                    <input type="submit"/>
+                </form>
+            </div>
+            </p>
+        {% endif %}
+	</div>
+{% else %}
+	<h1> ERROR </h1>
+{% endif %}
+{% endblock %}

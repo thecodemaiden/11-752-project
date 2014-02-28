@@ -48,7 +48,8 @@ Example 2 has some background noises:<br/>
 <audio class="audio" controls>
     <source src="{{url_for('static',filename='examples/example2.wav')}}" type="audio/wav">
 </audio><br/>
-<b>Transcription:</b> Schedule for Forbes and {%-if hard -%}[car horn]{%endif%} Murray
+<b>Transcription:</b> Schedule for Forbes and 
+{%-if hard -%}&nbsp;[car horn]{%endif%} Murray
 
 </p>
 
@@ -57,7 +58,7 @@ Example 3 includes noises from the speaker themselves: <br/>
 <audio class="audio" controls>
     <source src="{{url_for('static',filename='examples/example3.wav')}}" type="audio/wav">
 </audio><br/>
-<b>Transcription:</b> {%-if hard -%}[cough]{%endif%} South Graham and Baum
+<b>Transcription:</b> {%-if hard -%}&nbsp;[cough]{%endif%} South Graham and Baum
 </p>
 
 <p>
@@ -73,8 +74,15 @@ I'm going to Fifth and Negley Avenue.
 {% endif %}
 </p>
 
+<h2> Training </h2>
 <p>
-<h3><a href="/transcribe/{{ userid }}"> Click here to start transcribing. </a></h3>
+Before you begin transcribing, we will provide you with a few training examples.
+In these examples, you will provide a transcription, but after, we will show you
+our sample result for comparison.
+</p>
+
+<p>
+<h3><a href="/train/{{ userid }}"> Click here to start training. </a></h3>
 </p>
 
 {% endblock %}

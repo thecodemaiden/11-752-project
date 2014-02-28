@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<div>
+        <h2> You have finished the training examples </h2>
+
+        <p>
+        Now you will begin transcribing new recordings. We will no longer be
+        providing you with sample transcriptions. Good luck!
+        </p>
+
+        <h3> <a href="/transcribe/{{ userid }}"> Begin transcribing... </a> </h3>
+            
+	</div>
+{% endblock %}
