@@ -38,37 +38,38 @@ are unsure of a word, please make your best guess or use three questions marks
 <p>
 Example 1 contains speech only, with very little background noise:<br/>
 <audio class="audio" controls>
-    <source src="{{url_for('static',filename='audio/example1.wav')}}" type="audio/wav">
+    <source src="{{url_for('static',filename='examples/example1.wav')}}" type="audio/wav">
 </audio><br/>
-<b>Transcription:</b> Blah blah blahdey blah.
+<b>Transcription:</b> When does the next 61D leave?
 </p>
 
 <p>
 Example 2 has some background noises:<br/>
 <audio class="audio" controls>
-    <source src="{{url_for('static',filename='audio/example2.wav')}}" type="audio/wav">
+    <source src="{{url_for('static',filename='examples/example2.wav')}}" type="audio/wav">
 </audio><br/>
-<b>Transcription:</b> {%-if hard -%}[NOISES]{%endif%}Blah blah blahdey blah.
+<b>Transcription:</b> Schedule for Forbes and {%-if hard -%}[car horn]{%endif%} Murray
+
 </p>
 
 <p>
 Example 3 includes noises from the speaker themselves: <br/>
 <audio class="audio" controls>
-    <source src="{{url_for('static',filename='audio/example3.wav')}}" type="audio/wav">
+    <source src="{{url_for('static',filename='examples/example3.wav')}}" type="audio/wav">
 </audio><br/>
-<b>Transcription:</b> Blah blah blahdey blah.{%-if hard -%}[NOISES]{%endif%}
+<b>Transcription:</b> {%-if hard -%}[cough]{%endif%} South Graham and Baum
 </p>
 
 <p>
 Example 4 has some hesitation: <br/>
 <audio class="audio" controls>
-    <source src="{{url_for('static',filename='audio/example4.wav')}}" type="audio/wav">
+    <source src="{{url_for('static',filename='examples/example4.wav')}}" type="audio/wav">
 </audio><br/>
 <b>Transcription:</b>
 {%if hard %}
-Um I’m going to um Fifth Avenue and Neg- Negley Avenue.
+I’m uh going to Fifth and uh Neg- Negley Avenue.
 {% else %}
-I'm going to Fifth Avenue and Negley Avenue.
+I'm going to Fifth and Negley Avenue.
 {% endif %}
 </p>
 
