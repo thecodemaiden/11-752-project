@@ -123,10 +123,10 @@ def score_train(userid):
 
     #Checking whether the user input was correct or wrong
     status = "Correct"
-    l1 = re.findall('\[[^]]*\]|\w+', data.lower())
+    datalcase = data.lower()
+    l1 = re.findall('\[[^]]*\]|\w+', datalcase)
     l2 = re.findall('\[[^]]*\]|\w+', transcription.lower())
-
-    print l1, l2
+    l = 0
 
     if(len(l1) != len(l2)  ):
         status = "Wrong"
@@ -137,8 +137,11 @@ def score_train(userid):
                 continue
             elif(l1[i] != l2[i]):
                 status = "Wrong"
-                
-         
+                begi = datalcase.find(l1[i],l)
+                endi = begi + len(l1[i])
+                data = data[:begi] + "<u>" + data[begi:endi] + "</u>" + data[endi:]
+            l = l + len(l1[i])
+                       
     return render_template('train.html', filename=audiofilename, \
             transcription=transcription.strip(), user=data.strip(), \
             status=status, n=int(last_n), userid=userid, hard=hard)

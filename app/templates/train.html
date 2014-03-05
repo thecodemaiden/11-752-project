@@ -13,7 +13,7 @@
 
         {% if transcription %}
             <p> <b> "{{ status }}" </b></p>
-            <p> <b>You said: </b> "{{ user }}" </p>
+            <p> <b>You said: </b> "{{ user|safe }}" </p>
             <p> <b>We say: </b> "{{ transcription }}" </p>
 
             <h3><a href="/train/{{ userid }}/{{ n+1 }}">Continue...</a></h3>

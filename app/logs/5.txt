@@ -1,0 +1,8 @@
+User 5, hard
+Started at timestamp: 1394055530.37
+Training utterance 0 at timestamp 1394055533.53
+	
+Training utterance 1 at timestamp 1394055535.56
+	
+Training utterance 2 at timestamp 1394055539.72
+	Leaving from Forbes Avenue from murray      !
