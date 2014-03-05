@@ -88,7 +88,8 @@ def present_train(userid, num):
         hard = True
 
     render_template('layout.html', hard=hard)
-    return render_template('train.html', filename=filename, n=num, userid=userid)
+    return render_template('train.html', filename=filename, n=num, \
+            userid=userid, hard=hard)
 
 
 @app.route('/submittrain/<userid>', methods=['POST'])
@@ -111,16 +112,21 @@ def score_train(userid):
             transcriptionfilename)
     transcriptionlines = transcriptionfile.readlines()
 
+    hard = None
     transcription = " "
     if (int(userid) % 2 == 0):
+        hard = False
         transcription = transcriptionlines[0]
     else:
+        hard = True
         transcription = transcriptionlines[1]
 
     #Checking whether the user input was correct or wrong
     status = "Correct"
     l1 = re.findall('\[[^]]*\]|\w+', data.lower())
     l2 = re.findall('\[[^]]*\]|\w+', transcription.lower())
+
+    print l1, l2
 
     if(len(l1) != len(l2)  ):
         status = "Wrong"
@@ -134,7 +140,8 @@ def score_train(userid):
                 
          
     return render_template('train.html', filename=audiofilename, \
-            transcription=transcription, user=data, status=status, n=int(last_n), userid=userid)
+            transcription=transcription.strip(), user=data.strip(), \
+            status=status, n=int(last_n), userid=userid, hard=hard)
 
             
 @app.route('/begin/<userid>')
@@ -147,7 +154,16 @@ def present_file(userid, num):
     # Load the file for this test
     num = int(num)
     filename = app.config['AUDIO_FILES'][num]
-    return render_template('transcribe.html', filename=filename, n=num, userid=userid)
+
+    # Get the test type
+    if (int(userid) % 2 == 0):
+        hard = False
+    else:
+        hard = True
+
+    # Render
+    return render_template('transcribe.html', filename=filename, n=num, \
+            userid=userid, hard=hard)
 
 
 @app.route('/submit/<userid>', methods=['POST'])
