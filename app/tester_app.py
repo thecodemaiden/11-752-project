@@ -1,5 +1,7 @@
 import os
 import time
+import re
+import shutil
 from flask import *
 
 #
@@ -10,6 +12,7 @@ app = Flask(__name__)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 TRAIN_FOLDER = os.path.join(APP_ROOT, 'static/training')
 AUDIO_FOLDER = os.path.join(APP_ROOT, 'static/audio')
+LOG_FOLDER = os.path.join(APP_ROOT, 'logs')
 RESULTS_FOLDER = os.path.join(APP_ROOT, 'results')
 
 TRAIN_FILES = [f for f in os.listdir(TRAIN_FOLDER) if 
@@ -30,7 +33,6 @@ app.config['TRAIN_FILES'] = TRAIN_FILES
 app.config['AUDIO_FILES'] = AUDIO_FILES
 app.config['NEXT_ID'] = NEXT_ID
 
-
 #
 # Set page handlers
 #
@@ -46,11 +48,11 @@ def index():
     else:
         difficulty = 'hard'
 
-    # Create their file
-    resultFile = open(app.config['APP_ROOT'] + '/results/' + str(userid) + \
-            '.txt', 'a')
-    resultFile.write('User ' + str(userid) + ', ' + difficulty + '\n')
-    resultFile.write('Started at timestamp: ' + str(time.time()) + '\n')
+    # Create their log file
+    logFile = open(app.config['APP_ROOT'] + '/logs/' + str(userid) + \
+                   '.txt','a')
+    logFile.write('User ' + str(userid) + ', ' + difficulty + '\n')
+    logFile.write('Started at timestamp: ' + str(time.time()) + '\n')
 
     # Redirect to splash page
     return redirect('/splash/' + str(userid))
@@ -64,6 +66,7 @@ def splash(userid):
         hard = False
     else:
         hard = True
+        
     return render_template('index.html',userid=userid, hard=hard)
 
 
@@ -77,6 +80,14 @@ def present_train(userid, num):
 
     # Load the file for this test
     filename = app.config['TRAIN_FILES'][num]
+
+    # choose hard or easy
+    if (int(userid) % 2 == 0):
+        hard = False
+    else:
+        hard = True
+
+    render_template('layout.html', hard=hard)
     return render_template('train.html', filename=filename, n=num, userid=userid)
 
 
@@ -86,12 +97,12 @@ def score_train(userid):
     last_n = request.form['n']
     data = request.form['trans']
 
-    # Write their transcription to the results file
-    resultLine = 'Training utterance ' + last_n + ' at timestamp ' + \
+    # Write their transcription to the log file
+    logLine = 'Training utterance ' + last_n + ' at timestamp ' + \
             str(time.time()) + '\n\t' + data + '\n'
-    resultFile = open(app.config['APP_ROOT'] + '/results/' + str(userid) + \
+    logFile = open(app.config['APP_ROOT'] + '/logs/' + str(userid) + \
             '.txt', 'a')
-    resultFile.write(resultLine)
+    logFile.write(logLine)
 
     # Get the actual transcription
     audiofilename = app.config['TRAIN_FILES'][int(last_n)]
@@ -106,13 +117,29 @@ def score_train(userid):
     else:
         transcription = transcriptionlines[1]
 
-    return render_template('train.html', filename=audiofilename, \
-            transcription=transcription, user=data, n=int(last_n), userid=userid)
+    #Checking whether the user input was correct or wrong
+    status = "Correct"
+    l1 = re.findall('\[[^]]*\]|\w+', data.lower())
+    l2 = re.findall('\[[^]]*\]|\w+', transcription.lower())
 
+    if(len(l1) != len(l2)  ):
+        status = "Wrong"
+    else:
+        for i in range(len(l1)):
+            print l1[i], l2[i]
+            if( (l1[i].startswith("[")) or (l1[i].endswith("-")) ):
+                continue
+            elif(l1[i] != l2[i]):
+                status = "Wrong"
+                
+         
+    return render_template('train.html', filename=audiofilename, \
+            transcription=transcription, user=data, status=status, n=int(last_n), userid=userid)
+
+            
 @app.route('/begin/<userid>')
 def begin(userid):
     return render_template('begin.html', userid=userid)
-
 
 @app.route('/transcribe/<userid>/', defaults={'num':'0'})
 @app.route('/transcribe/<userid>/<num>')
@@ -129,16 +156,19 @@ def save_input(userid):
     last_n = request.form['n']
     data = request.form['trans']
 
-    # Write their transcription to the results file
-    resultLine = 'Utterance ' + last_n + ' at timestamp ' + str(time.time()) + \
+    # Write their transcription to the log file
+    logLine = 'Utterance ' + last_n + ' at timestamp ' + str(time.time()) + \
             '\n\t' + data + '\n'
-    resultFile = open(app.config['APP_ROOT'] + '/results/' + str(userid) + \
+    logFile = open(app.config['APP_ROOT'] + '/logs/' + str(userid) + \
             '.txt', 'a')
-    resultFile.write(resultLine)
+    logFile.write(logLine)
 
     # Increment utterance number and redirect
     n = int(last_n)+1
     if n >= len(app.config['AUDIO_FILES']):
+        # Copy log file to the result file as the user has completed the entire task
+        shutil.copyfile(app.config['APP_ROOT'] + '/logs/' + str(userid) + '.txt', \
+                        app.config['APP_ROOT'] + '/results/' + str(userid) + '.txt')
         return redirect('/thanks/')
     else:
         return redirect('/transcribe/'+str(userid)+'/'+str(n))

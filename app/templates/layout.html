@@ -13,6 +13,42 @@
 			{% block content %}
 			{% endblock %}
 			<div class="modal-footer">
+<center><h1>Instructions</h1></center>
+
+<p>
+We are gathering data to improve the speech recognition in 
+<a href="http://www.speech.cs.cmu.edu/letsgo/">Let's Go</a>, an automated bus
+route information system. We need you to listen to 26 clips of speech from
+actual callers and write out what they said{%if hard%}, any sounds they made,
+and any background noises that can be heard{%endif%}. We recommend listening
+with headphones. Note that some of the clips may be incomplete.
+</p>
+
+<p>
+{%if hard %}
+Please mark incomplete words or stuttering with a dash at the start or end of
+the word, e.g. "I'm go- I'm going to South Side Works." Indicate background
+noises in brackets with a description of the sound, e.g. "[cars passing by]
+Forbes and Craig to Sixth and Smithfield". Following are the tags for background
+noises that you may use:<br/>
+1. [car horn]<br/>
+2. [cough]<br/>
+3. [cry]<br/>
+4. [noise] <br/>
+{%else%}
+Only write down complete words; please ignore any incomplete words, hesitations
+such as  “um", or stuttering. Also ignore any background noises, such as passing
+cars or throat clearing.
+{%endif%}
+</p>
+
+<p>
+Capitalization and punctuation don't matter as long as the words are clearly
+labeled. Please write place names as fully as possible, e.g.  "Fifth Avenue"
+rather than "5th Ave". Please write bus numbers as one word, e.g. "61D".  If you
+are unsure of a word, please make your best guess or use three questions marks
+, e.g. "???".
+</p>
 				<h4>Thanks for helping!</h4>
 			</div>
 		</div>
