@@ -150,7 +150,7 @@ def score_train(userid):
                        
     return render_template('train.html', filename=audiofilename, \
             transcription=transcription.strip(), user=data.strip(), \
-            status=status, n=int(last_n), userid=userid, hard=hard)
+            status=status, n=int(last_n), userid=userid, hard=hard, scored=True)
 
             
 @app.route('/begin/<userid>')
