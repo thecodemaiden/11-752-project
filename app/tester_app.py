@@ -21,10 +21,13 @@ TRAIN_FILES = [f for f in os.listdir(TRAIN_FOLDER) if
 AUDIO_FILES = [f for f in os.listdir(AUDIO_FOLDER) if 
         os.path.isfile(os.path.join(AUDIO_FOLDER,f)) and
         f.endswith('.wav')]
+LOG_FILES = [f for f in os.listdir(LOG_FOLDER) if 
+        os.path.isfile(os.path.join(LOG_FOLDER,f)) and
+        f.endswith('.txt')]
 RESULTS_FILES = [f for f in os.listdir(RESULTS_FOLDER) if 
         os.path.isfile(os.path.join(RESULTS_FOLDER,f)) and
         f.endswith('.txt')]
-NEXT_ID = len(RESULTS_FILES)+1
+NEXT_ID = len(LOG_FILES)+1
 
 app.config['APP_ROOT'] = APP_ROOT
 app.config['TRAIN_FOLDER'] = TRAIN_FOLDER
@@ -128,15 +131,18 @@ def score_train(userid):
     l2 = re.findall('\[[^]]*\]|\w+', transcription.lower())
     l = 0
 
-    if(len(l1) != len(l2)  ):
-        status = "Wrong"
+    if(len(l1) > len(l2)  ):
+        status = "You had too many words:"
+    elif(len(l1) < len(l2)):
+        status = "You had too few words:"
     else:
         for i in range(len(l1)):
-            print l1[i], l2[i]
-            if( (l1[i].startswith("[")) or (l1[i].endswith("-")) ):
+            if( (l1[i].startswith("[") and not hard) or \
+                    (l1[i].endswith("-")) ):
                 continue
             elif(l1[i] != l2[i]):
-                status = "Wrong"
+                status = "One or more of your words is incorrect. " + \
+                        "Errors have been underlined"
                 begi = datalcase.find(l1[i],l)
                 endi = begi + len(l1[i])
                 data = data[:begi] + "<u>" + data[begi:endi] + "</u>" + data[endi:]
