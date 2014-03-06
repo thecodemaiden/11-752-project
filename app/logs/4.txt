@@ -1,6 +1,0 @@
-User 4, easy
-Started at timestamp: 1394055521.34
-Training utterance 0 at timestamp 1394055524.84
-	
-Training utterance 1 at timestamp 1394055527.07
-	
