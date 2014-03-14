@@ -1,3 +1,4 @@
+import os
 from dtw import dtw
 
 
@@ -58,8 +59,29 @@ class UserResult:
         return (insertions, deletions, substitutions)
 
 
+def readResults(resultsDir):
+    """ Given a directory, reads all the result files in that directory.
+        Returns a dict of results where res["easy"] and res["hard"] are
+        lists of the results for the easy and hard cases """
+    if resultsDir[-1] != "/":
+        resultsDir += "/"
+
+    results = dict([("easy",[]), ("hard",[])])
+    for filename in os.listdir(resultsDir):
+        # Parse the results file
+        filename = resultsDir+filename
+        result = UserResult(filename)
+        
+        # Store the result by difficulty
+        results[result.difficulty].append(result)
+
+    return results
+
+
 def main():
-    test = UserResult("../app/results/3.txt")
+    results = readResults("../app/results")
+
+    # TODO: read in ground truth and test
 
 
 if __name__ == "__main__":
