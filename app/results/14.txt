@@ -1,0 +1,64 @@
+User 14, easy
+Started at timestamp: 1394251022.33
+Training utterance 0 at timestamp 1394251112.29
+	When is the next 61 A
+Training utterance 1 at timestamp 1394251150.14
+	
+Training utterance 2 at timestamp 1394251171.83
+	Leaving from Forbes Avenue at Murray
+Training utterance 3 at timestamp 1394251187.84
+	I need the bus for the airport
+Utterance 0 at timestamp 1394251201.44
+	murray
+Utterance 1 at timestamp 1394251214.28
+	I can't Hear you
+Utterance 2 at timestamp 1394251221.48
+	Yes
+Utterance 3 at timestamp 1394251235.71
+	When's the next bus 
+Utterance 4 at timestamp 1394251257.95
+	6 love
+Utterance 5 at timestamp 1394251271.11
+	I cant hear. What?
+Utterance 6 at timestamp 1394251280.4
+	Pardon Me
+Utterance 7 at timestamp 1394251314.91
+	Hi, I am leaving at 8 PM with the 74 bus A
+Utterance 8 at timestamp 1394251332.52
+	I am going from east Liberty to south side works
+Utterance 9 at timestamp 1394251380.35
+	Hi I am leaving from East O hare street and trans far street at the crossing
+Utterance 10 at timestamp 1394251396.41
+	I would like to go from the airport to downtown
+Utterance 11 at timestamp 1394251426.99
+	I  need a bus from Forbes Avenue Atwood to MCkeesport transportation center
+Utterance 12 at timestamp 1394251432.23
+	
+Utterance 13 at timestamp 1394251441.93
+	61 D
+Utterance 14 at timestamp 1394251482.16
+	All the marks in the home get down the 64 
+Utterance 15 at timestamp 1394251504.65
+	that girl gave these void only
+Utterance 16 at timestamp 1394251535.74
+	
+Utterance 17 at timestamp 1394251545.14
+	Hello could i
+Utterance 18 at timestamp 1394251561.41
+	I wanna go to mckeesport transport center
+Utterance 19 at timestamp 1394251581.14
+	61 D from Loretta and Murray to chesterfield and fifth
+Utterance 20 at timestamp 1394251596.89
+	Squirrel Hill to sushill
+Utterance 21 at timestamp 1394251617.9
+	Hi I am leaving from East ??? street
+Utterance 22 at timestamp 1394251630.81
+	I wanna go from Monroeville mall
+Utterance 23 at timestamp 1394251641.47
+	86 and put the
+Utterance 24 at timestamp 1394251668.48
+	The next 2 times the 61C leaves MCkeesport going to Dusquense
+Utterance 25 at timestamp 1394251683.55
+	The 51C
+Utterance 26 at timestamp 1394251699.82
+	Schedule Information for the 54C

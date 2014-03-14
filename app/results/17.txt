@@ -1,0 +1,64 @@
+User 17, hard
+Started at timestamp: 1394740570.75
+Training utterance 0 at timestamp 1394740687.3
+	[other noise]When is it the next 61A?
+Training utterance 1 at timestamp 1394740716.82
+	[person noise]
+Training utterance 2 at timestamp 1394740734.47
+	Leaving from Forbes Avenue at Murray
+Training utterance 3 at timestamp 1394740757.87
+	[ovehicle noise]Ah I need a bus for the airport
+Utterance 0 at timestamp 1394740777.1
+	??? and Murray
+Utterance 1 at timestamp 1394740794.87
+	[other noise]I can hear you
+Utterance 2 at timestamp 1394740803.69
+	[other noise]Yes
+Utterance 3 at timestamp 1394740817.55
+	[other noise]When is the next bus?
+Utterance 4 at timestamp 1394740828.05
+	[other noise]??
+Utterance 5 at timestamp 1394740840.52
+	[other noise]I can't hear.What?
+Utterance 6 at timestamp 1394740852.76
+	[vehicle noise]??
+Utterance 7 at timestamp 1394740873.12
+	Hi.I'm leaving at 8Pm.?? 8
+Utterance 8 at timestamp 1394740890.24
+	I am going to east liberty to southside works
+Utterance 9 at timestamp 1394740917.92
+	hu, I am living at ??? street and ?? street
+Utterance 10 at timestamp 1394740939.87
+	I'd like to go from the airport to downton
+Utterance 11 at timestamp 1394740957.47
+	I need a bus from Forbes Avenue at Atwood to ? center
+Utterance 12 at timestamp 1394740963.93
+	[person noise]
+Utterance 13 at timestamp 1394740976.85
+	[person noise]61D 
+Utterance 14 at timestamp 1394741000.9
+	??? to 64
+Utterance 15 at timestamp 1394741016.68
+	That girl gave you ??? 
+Utterance 16 at timestamp 1394741026.72
+	[person noise]So
+Utterance 17 at timestamp 1394741035.07
+	[person noise]ok
+Utterance 18 at timestamp 1394741049.93
+	I want to go to Matkit transport center
+Utterance 19 at timestamp 1394741064.32
+	61D from Murray ?? to Chesterfield and ??
+Utterance 20 at timestamp 1394741074.06
+	Squirrell Hill to Swissville
+Utterance 21 at timestamp 1394741089.67
+	Hi I am leaving from East Con?? street
+Utterance 22 at timestamp 1394741103.27
+	I am gonna go from Monroeville now
+Utterance 23 at timestamp 1394741113.53
+	[person noise]A6
+Utterance 24 at timestamp 1394741133.22
+	The next two times the 61C reach Makin Forbes going to Duquesne
+Utterance 25 at timestamp 1394741150.48
+	[person noise]Hi 61C
+Utterance 26 at timestamp 1394741164.33
+	Scheduling information for ?? port C

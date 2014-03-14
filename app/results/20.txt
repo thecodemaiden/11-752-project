@@ -1,0 +1,64 @@
+User 20, easy
+Started at timestamp: 1394749204.65
+Training utterance 0 at timestamp 1394749606.02
+	when is the next 61A?
+Training utterance 1 at timestamp 1394749653.87
+	
+Training utterance 2 at timestamp 1394749679.71
+	leaving from forbes avenue at murray
+Training utterance 3 at timestamp 1394749699.88
+	I need the bus for the airport
+Utterance 0 at timestamp 1394749742.67
+	forbes and murray
+Utterance 1 at timestamp 1394749759.54
+	oh, i can't hear you
+Utterance 2 at timestamp 1394749770.03
+	yes
+Utterance 3 at timestamp 1394749782.54
+	when's the next bus
+Utterance 4 at timestamp 1394749845.7
+	six and ???
+Utterance 5 at timestamp 1394749882.08
+	I can't hear.  What?
+Utterance 6 at timestamp 1394749899.04
+	arling
+Utterance 7 at timestamp 1394749997.47
+	Hi i'm leaving at 8 pm with the ??? A
+Utterance 8 at timestamp 1394750019.86
+	I'm going from east liberty to south side works
+Utterance 9 at timestamp 1394750115.22
+	hi i'm leaving from east ohill street and chestnut street at the crossing
+Utterance 10 at timestamp 1394750136.51
+	I'd like to go from the airport to downtown
+Utterance 11 at timestamp 1394750209.69
+	I need a bus from forbes avenue at atwood to metro transportation center
+Utterance 12 at timestamp 1394750241.82
+	
+Utterance 13 at timestamp 1394750252.47
+	61D
+Utterance 14 at timestamp 1394750276.85
+	I would like to know what time the 64
+Utterance 15 at timestamp 1394750325.65
+	that girl gazy ???
+Utterance 16 at timestamp 1394750347.38
+	??? ???
+Utterance 17 at timestamp 1394750360.45
+	oakland
+Utterance 18 at timestamp 1394750399.88
+	I want to go to mckeets port transport center
+Utterance 19 at timestamp 1394750430.77
+	61D from lorreta and murry to chesterfield and fifth
+Utterance 20 at timestamp 1394750442.64
+	squirrel hill to swissville
+Utterance 21 at timestamp 1394750460.72
+	Hi I'm leaving from east carson street
+Utterance 22 at timestamp 1394750483.91
+	i wanna go from monroeville mall
+Utterance 23 at timestamp 1394750504.09
+	86, and put
+Utterance 24 at timestamp 1394750551.85
+	the next two times the 61C leaves mckeesport going to duquene
+Utterance 25 at timestamp 1394750567.95
+	I need 51C
+Utterance 26 at timestamp 1394750586.46
+	scheduling information for the 64C

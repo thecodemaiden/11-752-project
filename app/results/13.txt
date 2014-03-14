@@ -1,0 +1,66 @@
+User 13, hard
+Started at timestamp: 1394250829.22
+Training utterance 0 at timestamp 1394250946.21
+	[person noise] When is the next 61A?
+Training utterance 1 at timestamp 1394250964.07
+	[other noise] [person noise]
+Training utterance 2 at timestamp 1394250976.93
+	Leaving from Forbes Avenue at Murray.
+Training utterance 3 at timestamp 1394250989.43
+	Uh I need the bus for the airport/
+Utterance 0 at timestamp 1394251002.59
+	??? and Murray
+Utterance 1 at timestamp 1394251011.33
+	[other noise] I can't hear you.
+Utterance 2 at timestamp 1394251018.96
+	Yes [other noise]
+Utterance 3 at timestamp 1394251025.06
+	When's the next bus?
+Utterance 4 at timestamp 1394251035.47
+	???
+Utterance 5 at timestamp 1394251046.15
+	I can't hear WHAT?
+Utterance 6 at timestamp 1394251056.09
+	[other noise] harlem
+Utterance 7 at timestamp 1394251070.43
+	hi um i'm leaving uh ???
+Utterance 8 at timestamp 1394251086.52
+	i'm going from east liberty to southside works
+Utterance 9 at timestamp 1394251102.93
+	uh hi i'm leaving from east ohio street and chestnut street at the cross
+Utterance 10 at timestamp 1394251110.28
+	i'd like to go from the airport to downtown
+Utterance 11 at timestamp 1394251126.11
+	uh i need a bus from forbes avenue atwood to ??? transportation center
+Utterance 12 at timestamp 1394251133.52
+	[person noise] [other noise]
+Utterance 13 at timestamp 1394251142.35
+	61d [person noise]
+Utterance 14 at timestamp 1394251150.15
+	i would like to know what time the 64
+Utterance 15 at timestamp 1394251159.8
+	???
+Utterance 16 at timestamp 1394251166.79
+	uh
+Utterance 16 at timestamp 1394251169.72
+	uh
+Utterance 17 at timestamp 1394251176.04
+	okra
+Utterance 18 at timestamp 1394251186.87
+	i wanna go to mekits port transport center
+Utterance 19 at timestamp 1394251195.83
+	61d from loretta and murray to chesterfield and fifth
+Utterance 20 at timestamp 1394251202.1
+	squirrel hill to swissville
+Utterance 21 at timestamp 1394251209.78
+	hi i'm leaving from east carson street
+Utterance 22 at timestamp 1394251220.85
+	i'm gonna go from monrilleville mall
+Utterance 23 at timestamp 1394251227.17
+	86 and put the
+Utterance 24 at timestamp 1394251238.62
+	the next two times the 61c leaves mckey fort going to duquesne
+Utterance 25 at timestamp 1394251244.51
+	i need 51c
+Utterance 26 at timestamp 1394251250.79
+	scheduling information for the 54c

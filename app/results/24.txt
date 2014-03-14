@@ -1,0 +1,64 @@
+User 24, easy
+Started at timestamp: 1394825226.28
+Training utterance 0 at timestamp 1394825533.14
+	When is the next 61A
+Training utterance 1 at timestamp 1394825546.6
+	
+Training utterance 2 at timestamp 1394825581.35
+	Leaving to Forbes Avenue to Murray
+Training utterance 3 at timestamp 1394825638.64
+	I need the bus for the Airport
+Utterance 0 at timestamp 1394825689.54
+	from North to Murray
+Utterance 1 at timestamp 1394825703.13
+	I can't hear you
+Utterance 2 at timestamp 1394825712.0
+	Yes
+Utterance 3 at timestamp 1394825759.61
+	Want to take a bus
+Utterance 4 at timestamp 1394825780.28
+	Sixth Low
+Utterance 5 at timestamp 1394825794.2
+	I can't hear what
+Utterance 6 at timestamp 1394825821.38
+	A Ring
+Utterance 7 at timestamp 1394825872.63
+	Hi I am leaving at Eight PM with 74 Bus A
+Utterance 8 at timestamp 1394825931.84
+	I am going form East Liberty to South Sidewards
+Utterance 9 at timestamp 1394826033.27
+	Hi I am leaving from East Ohale street and chest mat street at the crossing
+Utterance 10 at timestamp 1394826068.11
+	I would like to go from the Airport to daltown
+Utterance 11 at timestamp 1394826103.0
+	I need a bus from Fourth Avenue to ??? to ??? transportation centre
+Utterance 12 at timestamp 1394826109.37
+	
+Utterance 13 at timestamp 1394826117.75
+	61D
+Utterance 14 at timestamp 1394826169.43
+	I want to act in a ??? the 64
+Utterance 15 at timestamp 1394826192.97
+	??? drew gazing ???
+Utterance 16 at timestamp 1394826198.64
+	
+Utterance 17 at timestamp 1394826205.19
+	Oh Great
+Utterance 18 at timestamp 1394826250.56
+	I want to go to McKeats port Transport Center
+Utterance 19 at timestamp 1394826316.23
+	61D from Loretta and Murray to Chesterfield inset
+Utterance 20 at timestamp 1394826348.33
+	Scroll Hill to Seusseville
+Utterance 21 at timestamp 1394826368.44
+	Hi I am leaving from East ??? street
+Utterance 22 at timestamp 1394826404.42
+	I wanna from Manrovelle Mall
+Utterance 23 at timestamp 1394826413.12
+	86 and ???
+Utterance 24 at timestamp 1394826444.64
+	The next two times the 61C leaves Mckeats port going to Ducane
+Utterance 25 at timestamp 1394826455.73
+	I need a 51C ???
+Utterance 26 at timestamp 1394826465.38
+	Scheduling information for the 54C
