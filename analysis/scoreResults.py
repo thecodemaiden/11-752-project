@@ -1,5 +1,27 @@
+import operator
 import os
+import string
 from dtw import dtw
+
+
+def formatTranscription(transcription):
+    """ Given a transcription sentence, normalizes it to a standard form """
+    # Convert formats
+    transcription = transcription.strip().lower()
+    transcription = transcription.replace("??", "UNKNOWN")
+    transcription = ''.join(ch for ch in transcription  if ch not in ",.;/?")
+
+    # Remove noise markers
+    transcription = " ".join(filter(lambda s : not (s[0] == '[' or s[-1] == ']'),
+            transcription.split()))
+
+    # Remove hesitation
+    transcription = transcription.replace("uh", "")
+    transcription = transcription.replace("um", "")
+    transcription = transcription.replace("uhm", "")
+    transcription = transcription.replace("umm", "")
+
+    return transcription
 
 
 class UserResult:
@@ -20,12 +42,12 @@ class UserResult:
 
         # Now parse each pair of lines
         self.trainingTranscriptions = [""]*4
-        self.transcriptions = [""]*27
+        self.transcriptions = [""]*28
         for i in xrange(2, len(lines), 2):
             # Get the utterance type and transcription
             line = lines[i].split()
             training = line[0] == "Training"
-            transcription = lines[i+1]
+            transcription = formatTranscription(lines[i+1])
 
             # Store the result
             if training:
@@ -37,26 +59,23 @@ class UserResult:
 
     def testUtterances(self, groundTruth):
         """ Given a list of groundTruth utterance text, returns the total
-            number of insertion, deletion and substitution errors the user had
-            in total """
+            number of insertion, deletion and substitution errors the user had """
         if len(groundTruth) != len(self.transcriptions):
             raise Exception("The number of ground truth trancriptions must match"
                     + " the number of actual transcriptions")
 
         # For each transcription, DTW
-        insertions = 0
-        deletions = 0
-        substitutions = 0
+        results = (0,0,0)
         for (test,actual) in zip(self.transcriptions, groundTruth):
-            (dist, ins, dels, subs) = dtw(test.split(), actual.split())
+            test = map(lambda s: s.strip(), test.split())
+            actual = map(lambda s: s.strip(), actual.split())
+            (dist, ins, dels, subs) = dtw(test, actual)
 
             # Add the error counts
-            insertions += ins
-            deletions += dels
-            substitutions += subs
+            results = tuple(map(operator.add, results, (ins,dels,subs)))
 
         # Return the error counts
-        return (insertions, deletions, substitutions)
+        return results
 
 
 def readResults(resultsDir):
@@ -78,10 +97,43 @@ def readResults(resultsDir):
     return results
 
 
+def readGroundTruth(easyFile, hardFile):
+    """ Given paths to file containing the easy and hard groundtruth
+        transcriptions, returns an array of strings for those
+        transcriptions """
+    easy = map(formatTranscription, open(easyFile,'r').readlines())
+    hard = map(formatTranscription, open(hardFile,'r').readlines())
+
+    return (easy, hard)
+
+
 def main():
+    # Read in result files
     results = readResults("../app/results")
 
-    # TODO: read in ground truth and test
+    # Read in ground truth
+    (easyTruth, hardTruth) = readGroundTruth("easy_ground_truth.txt", \
+            "hard_ground_truth.txt")
+
+    # Score all results
+    easyResults = (0,0,0)
+    for user in results["easy"]:
+        res = user.testUtterances(easyTruth)
+        easyResults = tuple(map(operator.add,easyResults,res))
+    easyResults = tuple(map(lambda x: 1.0*x/len(results["easy"]), easyResults))
+
+    hardResults = (0,0,0)
+    for user in results["hard"]:
+        res = user.testUtterances(hardTruth)
+        hardResults = tuple(map(operator.add,hardResults,res))
+    hardResults = tuple(map(lambda x: 1.0*x/len(results["hard"]), hardResults))
+
+    # Print results
+    print "Easy users had an average (insertions, deletions, substitutions): "
+    print "   ", easyResults
+
+    print "Hard users had an average (insertions, deletions, substitutions): "
+    print "   ", hardResults
 
 
 if __name__ == "__main__":
