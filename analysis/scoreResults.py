@@ -144,19 +144,15 @@ def main():
     
     # Score all results
     # Save the scores to compare group consistency, question ease, etc.
-    #easyScores = []
     easyResults = (0,0,0)
     for user in results["easy"]:
     	res = user.testUtterances(truth)
-        #   easyScores.append(res)
     	easyResults = tuple(map(operator.add,easyResults,res))
     easyResults = tuple(map(lambda x: 1.0*x/len(results["easy"]), easyResults))
     
     hardResults = (0,0,0)
-    #hardScores = []
     for user in results["hard"]:
     	res = user.testUtterances(truth)
-    #	hardScores.append(res)
     	hardResults = tuple(map(operator.add,hardResults,res))
     hardResults = tuple(map(lambda x: 1.0*x/len(results["hard"]), hardResults))
     
@@ -206,20 +202,23 @@ def main():
     
     
     print "Hardest 3 problems:"
-    print "\tEasy:", easyOrder[:2]
-    print "\tHard:", hardOrder[:2]
-    print "\tBoth:", bothOrder[:2]
+    print "\tEasy:", easyOrder[:3]
+    print "\tHard:", hardOrder[:3]
+    print "\tBoth:", bothOrder[:3]
     print
     
     # list problems from most to least time taken
-    easyTimes = sorted(range(len(timeTakenEasy)), key = lambda x:timeTakenEasy[x], reverse=True)
-    hardTimes = sorted(range(len(timeTakenHard)), key = lambda x:timeTakenHard[x], reverse=True)
-    bothTimes = sorted(range(len(timeTakenOverall)), key = lambda x:timeTakenOverall[x], reverse=True)
+    easyTimes = sorted(range(len(timeTakenEasy)), 
+            key = lambda x:timeTakenEasy[x], reverse=True)
+    hardTimes = sorted(range(len(timeTakenHard)), 
+            key = lambda x:timeTakenHard[x], reverse=True)
+    bothTimes = sorted(range(len(timeTakenOverall)), 
+            key = lambda x:timeTakenOverall[x], reverse=True)
     
     print "Most time taken on problems:"
-    print "\tEasy:", easyTimes
-    print "\tHard:", hardTimes
-    print "\tBoth:", bothTimes
+    print "\tEasy:", easyTimes[:3]
+    print "\tHard:", hardTimes[:3]
+    print "\tBoth:", bothTimes[:3]
     print
     
     # now the alignment consistency.... oh boy
