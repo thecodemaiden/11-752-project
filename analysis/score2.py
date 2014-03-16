@@ -3,6 +3,8 @@ import os
 import string
 import re
 from dtw import dtw
+import numpy
+from itertools import combinations
 
 
 ####
@@ -113,6 +115,24 @@ def readResults(resultsDir):
 
     return results
 
+# we need to find the consistency of users on the same problems
+# I will do this with the mean and standard deviation of inter-user alignments
+def alignUtterances(users):
+	user_pairs = combinations(users, 2)
+	align_stats = {}
+	n = len(users[0].transcriptions)
+	for u,v in user_pairs:
+		pair_distances = []
+		for i in range(n):
+			utt1 = u.transcriptions[i].split()
+			utt2 = v.transcriptions[i].split()
+			score = dtw(utt1, utt2)
+			# just save the distance
+			pair_distances.append(score[0])
+		# now save the mean and std of these
+		stats_key = (u.userid, v.userid)
+		align_stats[stats_key] = (numpy.mean(pair_distances), numpy.std(pair_distances))
+	return align_stats	
 
 def main():
 	# Read in result files
@@ -183,15 +203,20 @@ def main():
 	print "\tHard:", hardOrder[:2]
 	print "\tBoth:", bothOrder[:2]
 
-	# list problems from least to most time taken
-	easyTimes = sorted(range(len(timeTakenEasy)), key = lambda x:timeTakenEasy[x])
-	hardTimes = sorted(range(len(timeTakenHard)), key = lambda x:timeTakenHard[x])
-	bothTimes = sorted(range(len(timeTakenOverall)), key = lambda x:timeTakenOverall[x])
+	# list problems from most to least time taken
+	easyTimes = sorted(range(len(timeTakenEasy)), key = lambda x:timeTakenEasy[x], reverse=True)
+	hardTimes = sorted(range(len(timeTakenHard)), key = lambda x:timeTakenHard[x], reverse=True)
+	bothTimes = sorted(range(len(timeTakenOverall)), key = lambda x:timeTakenOverall[x], reverse=True)
 
-	print "Least to most time taken on problems:"
+	print "Most time taken on problems:"
 	print "\tEasy:", easyTimes
 	print "\tHard:", hardTimes
 	print "\tBoth:", bothTimes
+
+	# now the alignment consistency.... oh boy
+	print alignUtterances(results["easy"])
+	print alignUtterances(results["hard"])
+
 
 if __name__ == "__main__":
     main()
