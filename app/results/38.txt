@@ -1,0 +1,64 @@
+User 38, easy
+Started at timestamp: 1394996799.6
+Training utterance 0 at timestamp 1394996899.98
+	When is the next 61A
+Training utterance 1 at timestamp 1394996908.99
+	
+Training utterance 2 at timestamp 1394996918.59
+	living from forbes avenue at murray
+Training utterance 3 at timestamp 1394996931.33
+	ah I need the bus for the airport
+Utterance 0 at timestamp 1394996947.26
+	Leaving to murray
+Utterance 1 at timestamp 1394996959.83
+	I can't hear you
+Utterance 2 at timestamp 1394996965.91
+	Yes
+Utterance 3 at timestamp 1394996975.02
+	When's the next bus
+Utterance 4 at timestamp 1394996985.81
+	??? no
+Utterance 5 at timestamp 1394996994.03
+	I can't hear what
+Utterance 6 at timestamp 1394997007.45
+	???
+Utterance 7 at timestamp 1394997026.61
+	??? ??? I'm leaving the end with the ???
+Utterance 8 at timestamp 1394997036.6
+	i'm going from east liberty to southside works
+Utterance 9 at timestamp 1394997061.43
+	Hi I'm leaving from east ??? street at the ??? street
+Utterance 10 at timestamp 1394997077.05
+	I'd like to go from the end of the mountain
+Utterance 11 at timestamp 1394997102.15
+	I need a bus from forbes avenue atwood to ??? transportation center
+Utterance 12 at timestamp 1394997119.03
+	one of them
+Utterance 13 at timestamp 1394997161.5
+	61D
+Utterance 14 at timestamp 1394997211.25
+	I would like to know what time the 64
+Utterance 15 at timestamp 1394997229.15
+	that girl daisy ??? ???
+Utterance 16 at timestamp 1394997238.51
+	
+Utterance 17 at timestamp 1394997244.42
+	hello there
+Utterance 18 at timestamp 1394997256.67
+	i wanna go to ??? sport transport center
+Utterance 19 at timestamp 1394997276.88
+	61D from loreta and murray to chesterfield and fifth
+Utterance 20 at timestamp 1394997287.67
+	squirrel hill to ???
+Utterance 21 at timestamp 1394997295.9
+	hi I'm leaving from east ??? street
+Utterance 22 at timestamp 1394997304.74
+	I want to go from monroeville mall
+Utterance 23 at timestamp 1394997312.83
+	eighty six
+Utterance 24 at timestamp 1394997327.21
+	the next two times the 61C leaves ??? forbes going to duquesnue
+Utterance 25 at timestamp 1394997335.44
+	51C
+Utterance 26 at timestamp 1394997346.06
+	scheduling information for the 54C
