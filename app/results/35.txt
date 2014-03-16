@@ -1,0 +1,64 @@
+User 35, hard
+Started at timestamp: 1394941718.82
+Training utterance 0 at timestamp 1394941767.9
+	I want 61A
+Training utterance 1 at timestamp 1394941788.24
+	person noise
+Training utterance 2 at timestamp 1394941804.59
+	Leaving fro Forbes Avenue at Murray
+Training utterance 3 at timestamp 1394941824.36
+	I need the bus for the airport
+Utterance 0 at timestamp 1394941853.55
+	Um, centre and murray
+Utterance 1 at timestamp 1394941879.26
+	[other noise] I can't hear you
+Utterance 2 at timestamp 1394941885.29
+	Yes
+Utterance 3 at timestamp 1394941896.88
+	When's the next bus ?
+Utterance 4 at timestamp 1394941923.41
+	Be slow
+Utterance 5 at timestamp 1394941937.71
+	I can't hear. What ?
+Utterance 6 at timestamp 1394941952.57
+	[vehicle noise] darling
+Utterance 7 at timestamp 1394941977.18
+	sorry, I'm uh leaving at 8pm on 71A
+Utterance 8 at timestamp 1394941995.14
+	I'm going from East Liberty to South Side works
+Utterance 9 at timestamp 1394942049.77
+	Hi, I'm leaving from [someplace] to [some other place]
+Utterance 10 at timestamp 1394942065.99
+	I would like to go from Airport to DownTown
+Utterance 11 at timestamp 1394942092.06
+	I need a bus from Forbes Avenue Atwood to some bus center
+Utterance 12 at timestamp 1394942102.71
+	[person noise] water
+Utterance 13 at timestamp 1394942120.08
+	61D [person choice] 
+Utterance 14 at timestamp 1394942135.42
+	??? time does the 64 ?
+Utterance 15 at timestamp 1394942150.58
+	That girl gave you [person noise]
+Utterance 16 at timestamp 1394942161.59
+	Uh,..  Uh
+Utterance 17 at timestamp 1394942173.6
+	Oh Claire !
+Utterance 18 at timestamp 1394942199.71
+	I want to go to McHeat Transport Center
+Utterance 19 at timestamp 1394942226.37
+	61D from Lorretta and something to Chesterfield and Fifth
+Utterance 20 at timestamp 1394942247.27
+	Squirrel Hill to suisseville 
+Utterance 21 at timestamp 1394942262.73
+	Hi, I'm leaving from East Carson Street
+Utterance 22 at timestamp 1394942275.59
+	I'm gonna go from Monroeville Mall
+Utterance 23 at timestamp 1394942283.74
+	86 and put the
+Utterance 24 at timestamp 1394942307.92
+	The next two times 61 C leaving McInsport going to Dukene
+Utterance 25 at timestamp 1394942317.0
+	I need 51C
+Utterance 26 at timestamp 1394942334.88
+	Scheduling information for the 54C
