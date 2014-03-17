@@ -73,7 +73,8 @@ class UserResult:
     
     def testUtterances(self, groundTruth):
     	""" Given a list of groundTruth utterance text, returns the total
-    	number of insertion, deletion and substitution errors the user had """
+    	number of insertion, deletion and substitution errors the user had
+    	Also, gives a list of time taken for transcribing each clip"""
     	if len(groundTruth) != len(self.transcriptions):
     	    raise Exception("The number of ground truth trancriptions must match"
     	        + " the number of actual transcriptions")
@@ -144,15 +145,19 @@ def main():
     
     # Score all results
     # Save the scores to compare group consistency, question ease, etc.
+    #easyScores = []
     easyResults = (0,0,0)
     for user in results["easy"]:
     	res = user.testUtterances(truth)
+        #   easyScores.append(res)
     	easyResults = tuple(map(operator.add,easyResults,res))
     easyResults = tuple(map(lambda x: 1.0*x/len(results["easy"]), easyResults))
     
     hardResults = (0,0,0)
+    #hardScores = []
     for user in results["hard"]:
     	res = user.testUtterances(truth)
+    #	hardScores.append(res)
     	hardResults = tuple(map(operator.add,hardResults,res))
     hardResults = tuple(map(lambda x: 1.0*x/len(results["hard"]), hardResults))
     
@@ -172,9 +177,9 @@ def main():
     difficultyHard = {i:(0,0,0) for i in range(len(truth))}
     difficultyOverall = {i:(0,0,0) for i in range(len(truth))}
     
-    timeTakenEasy = [0]*len(truth)
-    timeTakenHard = [0]*len(truth)
-    timeTakenOverall = [0]*len(truth)
+    timeTakenEasy = [0.0]*len(truth)
+    timeTakenHard = [0.0]*len(truth)
+    timeTakenOverall = [0.0]*len(truth)
     
     for i in range(len(truth)):
         for user in results["easy"]:
@@ -202,29 +207,46 @@ def main():
     
     
     print "Hardest 3 problems:"
-    print "\tEasy:", easyOrder[:3]
-    print "\tHard:", hardOrder[:3]
-    print "\tBoth:", bothOrder[:3]
+    print "\tEasy:", easyOrder[:2]
+    print "\tHard:", hardOrder[:2]
+    print "\tBoth:", bothOrder[:2]
     print
     
     # list problems from most to least time taken
-    easyTimes = sorted(range(len(timeTakenEasy)), 
-            key = lambda x:timeTakenEasy[x], reverse=True)
-    hardTimes = sorted(range(len(timeTakenHard)), 
-            key = lambda x:timeTakenHard[x], reverse=True)
-    bothTimes = sorted(range(len(timeTakenOverall)), 
-            key = lambda x:timeTakenOverall[x], reverse=True)
+    easyTimes = sorted(range(len(timeTakenEasy)), key = lambda x:timeTakenEasy[x], reverse=True)
+    hardTimes = sorted(range(len(timeTakenHard)), key = lambda x:timeTakenHard[x], reverse=True)
+    bothTimes = sorted(range(len(timeTakenOverall)), key = lambda x:timeTakenOverall[x], reverse=True)
     
     print "Most time taken on problems:"
-    print "\tEasy:", easyTimes[:3]
-    print "\tHard:", hardTimes[:3]
-    print "\tBoth:", bothTimes[:3]
+    print "\tEasy:", easyTimes
+    print "\tHard:", hardTimes
+    print "\tBoth:", bothTimes
+    print
+
+    #list average time taken on problems
+    print "Average time taken by users:"
+    print "\tEasy:", sum(timeTakenEasy)/len(results["easy"])
+    print "\tHard:", sum(timeTakenHard)/len(results["hard"])
+    print "\tBoth:", sum(timeTakenOverall)/len(results["easy"]+results["hard"])
     print
     
     # now the alignment consistency.... oh boy
     print "Consistency:"
     print "\t", alignUtterances(results["easy"])
     print "\t", alignUtterances(results["hard"])
+
+    # Time taken by each user for easy problems:
+    print "Time taken by users for easy problems:"
+    for user in results["easy"]:
+        print sum(user.times)
+
+    print
+
+    # Time taken by each user for hard problems:
+    print "Time taken by users for hard problems:"
+    for user in results["hard"]:
+        print sum(user.times)
+
 
 
 if __name__ == "__main__":
