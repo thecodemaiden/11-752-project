@@ -1,0 +1,64 @@
+User 45, hard
+Started at timestamp: 1395012549.86
+Training utterance 0 at timestamp 1395012677.41
+	[other noise] When is the next 61A?
+Training utterance 1 at timestamp 1395012715.49
+	[person noise]
+Training utterance 2 at timestamp 1395012751.51
+	Leaving from Forbes avenue at Murray
+Training utterance 3 at timestamp 1395012852.73
+	Ah I missed the bus for the airport
+Utterance 0 at timestamp 1395012921.96
+	Um [noise] -ship and murray
+Utterance 1 at timestamp 1395012940.39
+	[other noise] I can't hear you
+Utterance 2 at timestamp 1395012951.66
+	[other noise] yes
+Utterance 3 at timestamp 1395012978.37
+	[other noise] When is the next bus
+Utterance 4 at timestamp 1395013015.31
+	Biglow
+Utterance 5 at timestamp 1395013029.95
+	I can't hear, what
+Utterance 6 at timestamp 1395013059.18
+	[vehicle noise] army
+Utterance 7 at timestamp 1395013175.6
+	If I am m - meeting uuu at 8pm it is 71A
+Utterance 8 at timestamp 1395013191.57
+	I am going from east liberty to south side works
+Utterance 9 at timestamp 1395013234.28
+	Ah, I am leaving from east ohio street and chestnut street at the crossing
+Utterance 10 at timestamp 1395013262.23
+	I will like to go from the airport to downtown
+Utterance 11 at timestamp 1395013307.69
+	I need to a bus from forbes avenue at atwood to mckees sport transportation centre
+Utterance 12 at timestamp 1395013334.35
+	[person noise]
+Utterance 13 at timestamp 1395013346.43
+	61D [person noise]
+Utterance 14 at timestamp 1395013372.42
+	I wanna like to know what time the 64
+Utterance 15 at timestamp 1395013422.06
+	That girl gave you -
+Utterance 16 at timestamp 1395013443.55
+	Oh Ah
+Utterance 17 at timestamp 1395013455.81
+	Oakland
+Utterance 18 at timestamp 1395013484.31
+	I wanna go to McKeesport transport centre
+Utterance 19 at timestamp 1395013552.41
+	61D from lorredo and murray to chesterfield and fifth
+Utterance 20 at timestamp 1395013561.62
+	squirrelhill to swissvale
+Utterance 21 at timestamp 1395013572.58
+	hi I am leaving from east carson street
+Utterance 22 at timestamp 1395013591.3
+	I wanna go from monroeville mall
+Utterance 23 at timestamp 1395013614.73
+	86 and fifth -
+Utterance 24 at timestamp 1395013662.35
+	the next two times the 61C leaves McKeesport going to Duquesne
+Utterance 25 at timestamp 1395013686.06
+	I n-need 51C
+Utterance 26 at timestamp 1395013741.8
+	Schedule and information for 54C

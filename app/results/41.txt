@@ -62,3 +62,67 @@ Utterance 25 at timestamp 1395003082.67
 	I, uh, need a 51C.
 Utterance 26 at timestamp 1395003096.25
 	Schedule information for the 54C
+Utterance 27 at timestamp 1395003123.11
+	[person noise] to Forbes
+Training utterance 0 at timestamp 1395022277.94
+	[person noise] When is the next 61A?
+Training utterance 1 at timestamp 1395022304.97
+	[person noise] coughing
+Training utterance 2 at timestamp 1395022326.98
+	Leaving from Forbes avenue at murray
+Training utterance 3 at timestamp 1395022354.98
+	Ahh- Is this the bus for the airport?
+Utterance 0 at timestamp 1395022421.48
+	???. and Murray
+Utterance 1 at timestamp 1395022441.59
+	[other noises] I can't hear you
+Utterance 2 at timestamp 1395022449.91
+	Yes
+Utterance 3 at timestamp 1395022470.63
+	Wasn't that the bus?
+Utterance 4 at timestamp 1395026199.18
+	???
+Utterance 5 at timestamp 1395026215.87
+	I can't hear - what?
+Utterance 6 at timestamp 1395026257.31
+	[vehicle noise] our lane
+Utterance 7 at timestamp 1395026329.22
+	Hi um I'm uh using uh hbm 74??
+Utterance 8 at timestamp 1395026354.13
+	I'm going from east liberty to southside works
+Utterance 9 at timestamp 1395026412.38
+	Err Hi I'm leaving from east o'hale street and chestnut street at the crossing
+Utterance 10 at timestamp 1395026438.61
+	I'd like to go from the airport to downtown
+Utterance 11 at timestamp 1395026501.39
+	Um I need a bus from Forbes Avenue at Atwood to Mckeesport transportation centre
+Utterance 12 at timestamp 1395026515.65
+	??? one of them
+Utterance 13 at timestamp 1395026535.92
+	61D [person noise]
+Utterance 14 at timestamp 1395026838.75
+	??? the 64
+Utterance 15 at timestamp 1395026920.71
+	??? gave the ???
+Utterance 16 at timestamp 1395026934.96
+	[other noises] uh
+Utterance 17 at timestamp 1395026971.48
+	oh! great
+Utterance 18 at timestamp 1395026994.81
+	I wanna go to Mckee sport transport center
+Utterance 19 at timestamp 1395027017.87
+	61D from Loretta Murray to chesterfield and fifth
+Utterance 20 at timestamp 1395027035.26
+	Squirrel Hill to Swisswale
+Utterance 21 at timestamp 1395027061.02
+	Hi, I'm leaving from east carson street
+Utterance 22 at timestamp 1395027076.39
+	I wanna go from Monroville mall
+Utterance 23 at timestamp 1395027097.03
+	86 and [voice cut-off]
+Utterance 24 at timestamp 1395027143.65
+	the next two times the 61C leaves Mckee sports going to Duquesne 
+Utterance 25 at timestamp 1395027153.17
+	I need 51C
+Utterance 26 at timestamp 1395027164.18
+	Scheduling information for 54C
