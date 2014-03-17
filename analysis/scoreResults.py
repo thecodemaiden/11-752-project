@@ -142,6 +142,17 @@ def main():
     
     # Read in ground truth
     truth = map(formatTranscription, open('gold_standard.txt', 'r').readlines())
+
+    #Get total number of words in ground truth
+    numTotWords = 0
+    for actual in truth:
+        actual = map(lambda s: s.strip(), actual.split())
+        numTotWords = numTotWords + len(actual)
+
+    #Store number of words correctly identified for each user
+   # numCorrect = [0]*len(results["easy"]+results["hard"])
+
+  #  print numCorrect
     
     # Score all results
     # Save the scores to compare group consistency, question ease, etc.
@@ -149,6 +160,7 @@ def main():
     easyResults = (0,0,0)
     for user in results["easy"]:
     	res = user.testUtterances(truth)
+    	user.percCorrect = (float)( numTotWords - ( res[1] + res[2] ) ) / numTotWords
         #   easyScores.append(res)
     	easyResults = tuple(map(operator.add,easyResults,res))
     easyResults = tuple(map(lambda x: 1.0*x/len(results["easy"]), easyResults))
@@ -157,6 +169,7 @@ def main():
     #hardScores = []
     for user in results["hard"]:
     	res = user.testUtterances(truth)
+    	user.percCorrect = (float)( numTotWords - ( res[1] + res[2] ) ) / numTotWords
     #	hardScores.append(res)
     	hardResults = tuple(map(operator.add,hardResults,res))
     hardResults = tuple(map(lambda x: 1.0*x/len(results["hard"]), hardResults))
@@ -236,16 +249,29 @@ def main():
     print "\t", alignUtterances(results["hard"])
     print
 
-    # Time taken by each user for easy problems:
-    print "Time taken by users for easy problems:"
+    averageAccuracyEasy = 0.0
+    averageAccuracyHard = 0.0
+
+    # Time taken by each user for easy problems along with fraction of words correctly transcribed:
+    print "For easy problems:"
     for user in results["easy"]:
-        print "\t", sum(user.times)
+        print "Time taken\t", sum(user.times)
+        print "Fraction of correctly transcribed words\t", user.percCorrect
+        averageAccuracyEasy = averageAccuracyEasy + user.percCorrect
     print
 
     # Time taken by each user for hard problems:
-    print "Time taken by users for hard problems:"
+    print "For hard problems:"
     for user in results["hard"]:
-        print "\t", sum(user.times)
+        print "Time taken\t", sum(user.times)
+        print "Fraction of correctly transcribed words\t", user.percCorrect
+        averageAccuracyHard = averageAccuracyHard + user.percCorrect
+    print
+
+    # Average accuracies
+    print "Average accuracy for easy problems\t",averageAccuracyEasy*100/len(results["easy"])
+    print "Average accuracy for hard problems\t",averageAccuracyHard*100/len(results["hard"])
+    print "Overall Average accuracy\t",(averageAccuracyEasy + averageAccuracyHard)*100/len(results["easy"] + results["hard"])
 
 
 
