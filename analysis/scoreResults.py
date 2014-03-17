@@ -234,18 +234,18 @@ def main():
     print "Consistency:"
     print "\t", alignUtterances(results["easy"])
     print "\t", alignUtterances(results["hard"])
+    print
 
     # Time taken by each user for easy problems:
     print "Time taken by users for easy problems:"
     for user in results["easy"]:
-        print sum(user.times)
-
+        print "\t", sum(user.times)
     print
 
     # Time taken by each user for hard problems:
     print "Time taken by users for hard problems:"
     for user in results["hard"]:
-        print sum(user.times)
+        print "\t", sum(user.times)
 
 
 
